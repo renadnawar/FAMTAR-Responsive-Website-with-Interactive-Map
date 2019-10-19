@@ -1,0 +1,203 @@
+<html>
+<head>
+  <title>A Leaflet map!</title>
+  <link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7.3/leaflet.css" />
+  <script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7.3/leaflet.js"></script>
+  <style>
+    #map{ width: 900px; height: 500px; }
+  </style>
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <script>
+
+  // initialize the map
+
+
+  // load a tile layer
+  var map = L.map('map').setView([-8, 27.405140], 3);
+
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+          maxZoom: 18
+          //L.tileLayer('http://{s}.tile.cloudmade.com/e7b61e61295a44a5b319ca0bd3150890/997/256/{z}/{x}/{y}.png', {
+          //    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery Â© <a href="http://cloudmade.com">CloudMade</a>',
+
+      }).addTo(map);
+      var redIcon = new L.Icon({
+        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      });
+
+      var yellowIcon = new L.Icon({
+        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      });
+
+      var orangeIcon = new L.Icon({
+        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      });
+
+
+      var marker = L.marker([-25.472811, 28.051470], {icon: redIcon}).addTo(map);
+      marker.bindPopup("<b>Eswatini</b><br>.").openPopup();
+      var popup = L.popup();
+
+      function onMapClick(e) {
+      	popup
+      		.setLatLng(e.latlng)
+      		.setContent("You clicked the map at " + e.latlng.toString())
+      		.openOn(map);
+      }
+
+      map.on('click', onMapClick);
+      var marker = L.marker([-26.358271, 27.405140], {icon: orangeIcon}).addTo(map);
+      marker.bindPopup("<b>Central Africa</b><br>GDP: 2.3 Billion USD </b><br>Population: 4.7 Million </b><br> Ppoulation at risk: 2.5 Million </b>").openPopup();
+      var popup = L.popup();
+
+      function onMapClick(e) {
+      	popup
+      		.setLatLng(e.latlng)
+      		.setContent("You clicked the map at " + e.latlng.toString())
+      		.openOn(map);
+      }
+
+      map.on('click', onMapClick);
+
+      var marker = L.marker([-0.023559, 37.906193], {icon: redIcon}).addTo(map);
+      marker.bindPopup("<b>Kenya</b><br>I am a popup.").openPopup();
+      var popup = L.popup();
+
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(map);
+      }
+
+      map.on('click', onMapClick);
+
+      var marker = L.marker([-29.609987, 28.233608],  {icon: orangeIcon}).addTo(map);
+      marker.bindPopup("<b>Lesotho</b><br>I am a popup.").openPopup();
+      var popup = L.popup();
+
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(map);
+      }
+
+      map.on('click', onMapClick);
+
+      var marker = L.marker([-18.766947, 46.869106], {icon: redIcon}).addTo(map);
+      marker.bindPopup("<b>Madagascar</b><br>I am a popup.").openPopup();
+      var popup = L.popup();
+
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(map);
+      }
+
+      map.on('click', onMapClick);
+
+      var marker = L.marker([-18.665695, 35.529564], {icon: yellowIcon}).addTo(map);
+      marker.bindPopup("<b>Mozambique</b><br>I am a popup.").openPopup();
+      var popup = L.popup();
+
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(map);
+      }
+
+      map.on('click', onMapClick);
+
+      var marker = L.marker([13.451290, -16.573000], {icon: orangeIcon}).addTo(map);
+      marker.bindPopup("<b>Gambia</b><br>I am a popup.").openPopup();
+      var popup = L.popup();
+
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(map);
+      }
+
+      map.on('click', onMapClick);
+
+      var marker = L.marker([5.152149, 46.199615], {icon: redIcon}).addTo(map);
+      marker.bindPopup("<b>Somalia</b><br>I am a popup.").openPopup();
+      var popup = L.popup();
+
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(map);
+      }
+
+      map.on('click', onMapClick);
+
+      var marker = L.marker([-4.038333, 21.758663],  {icon: yellowIcon}).addTo(map);
+      marker.bindPopup("<b>Congo</b><br>I am a popup.").openPopup();
+      var popup = L.popup();
+
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(map);
+      }
+
+      map.on('click', onMapClick);
+
+      var marker = L.marker([21.007891, -10.940835],  {icon: orangeIcon}).addTo(map);
+      marker.bindPopup("<b>Mauritania</b><br>I am a popup.").openPopup();
+      var popup = L.popup();
+
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(map);
+      }
+
+      map.on('click', onMapClick);
+
+      var marker = L.marker([6.876992, 31.306978], {icon: redIcon}).addTo(map);
+      marker.bindPopup("<b>South Sudan</b><br>GDP: 1 Billion USD </b><br>Population: 11.1 Million </b><br> Ppoulation at risk: 4 Million </b>").openPopup();
+      var popup = L.popup();
+
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(map);
+      }
+
+      map.on('click', onMapClick);
+
+
+
+  </script>
+</body>
+</html>
